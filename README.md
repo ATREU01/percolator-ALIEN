@@ -2,6 +2,52 @@
 
 Command-line interface for interacting with the Percolator perpetuals protocol on Solana.
 
+## Status Update — 2026-02-20
+
+### What's Live & Testing Now
+
+**ALIENATOR Token (Devnet)**
+- Mint: `B2ycZW2g5RzWv5BYPBdeAfuZe9tt7AD8uNGAozyzUpzU`
+- Token minting, transfers, and associated token accounts all working
+- Multiple wallets funded and actively testing
+
+**Trading UI (Web Dashboard)**
+- Live on devnet with real Chainlink SOL/USD oracle
+- Blockhash expiration fix deployed — transactions no longer fail on slow connections
+- Human-readable error messages mapped from on-chain program error codes
+- Educational "HOW DOES TRADING WORK?" panel for onboarding new users
+- Token balance display, faucet integration, and "Get Tokens" UX
+- Position dust threshold cleanup and table clarity improvements
+- Multi-user position tracking with live PnL updates
+- Collateral deposit + leverage trading confirmed working end-to-end
+
+**CLI & Infrastructure**
+- Keeper crank bot running continuous sweeps
+- Random traders bot with momentum bias and best-LP routing
+- vAMM matcher deployed alongside passive 50bps matcher
+- Chainlink oracle validation hardened
+- 19+ security issues audited (see `issue.md`)
+
+### What's Next — Roadmap
+
+**Phase 1: Autonomous Trading Agent (OpenClaw Integration)**
+- Telegram bot (@ATREU_OPENCLAW_BOT) running in sandboxed Ubuntu VM
+- Bot gets its own Solana keypair for autonomous transaction signing
+- Trading SDK — lightweight JS/TS library for deposit, open/close positions, check PnL
+- Command interface: "open long 100 5x", "check balance", "close position"
+
+**Phase 2: x402 Payment Protocol**
+- HTTP 402 Payment Required integration for machine-to-machine payments
+- Bot charges for trading signals, data access, or premium features
+- Bot pays for oracle feeds, compute, and external data autonomously
+- Revenue-generating AI agent operating on Solana
+
+**Phase 3: Full Agent Economy**
+- Bot as an independent economic actor — owns capital, makes trade decisions, manages risk
+- Strategy logic for automated entry/exit based on market signals
+- Community engagement via Telegram — onboarding, alerts, position monitoring
+- Multi-agent coordination potential
+
 ## Related Repositories
 
 - [percolator](https://github.com/aeyakovenko/percolator) - Risk engine library
